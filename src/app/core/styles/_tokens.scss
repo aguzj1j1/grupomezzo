@@ -1,0 +1,32 @@
+// ---------------------------------------------------------------------------
+// Design tokens — Grupo Mezzo
+//
+// No existe manual de marca provisto por el cliente. Estos valores fueron
+// definidos con criterio de diseño propio a partir del isotipo (barras
+// diagonales en negro puro) y del rubro (desarrollo industrial y logístico).
+// Si el cliente entrega una guía de marca real, estos son los únicos valores
+// que hay que tocar — todo el resto de la app los consume desde acá.
+// ---------------------------------------------------------------------------
+
+:root {
+  // Color — paleta "industrial / plano de obra"
+  --mezzo-concrete: #eae7df; // fondo principal
+  --mezzo-paper: #f5f3ed; // paneles claros / cards
+  --mezzo-graphite: #1a1b18; // texto principal, mismo tono que el isotipo
+  --mezzo-ink-soft: #3e4038; // texto secundario
+  --mezzo-steel: #8b8d82; // texto terciario / líneas técnicas
+  --mezzo-line: #cfcbbe; // bordes y divisores
+  --mezzo-amber: #d98a25; // acento — CTAs, foco
+  --mezzo-amber-ink: #5c3a10; // acento sobre fondo claro (texto/números)
+  --mezzo-ferrous: #2b4436; // panel oscuro — sección sostenibilidad
+  --mezzo-ferrous-ink: #dce6dd; // texto sobre panel ferrous
+
+  // Tipografía
+  --mezzo-font-display: 'Space Grotesk', sans-serif; // titulares
+  --mezzo-font-body: 'IBM Plex Sans', sans-serif; // cuerpo de texto
+  --mezzo-font-mono: 'IBM Plex Mono', monospace; // datos, eyebrows, numeración
+
+  // Layout
+  --mezzo-wrap: 1180px;
+  --mezzo-radius: 0px; // el sistema no usa bordes redondeados (ver isotipo)
+}

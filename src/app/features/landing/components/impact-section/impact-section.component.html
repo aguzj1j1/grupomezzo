@@ -1,0 +1,24 @@
+<section id="articulacion">
+  <div class="wrap">
+    <div class="section-head">
+      <mezzo-eyebrow text="Articulación institucional" />
+      <h2>El nexo entre lo privado, lo público y la comunidad.</h2>
+      <p>
+        Gestionamos la intermediación, la normativa y el financiamiento que todo desarrollo de
+        escala necesita para avanzar —y el impacto que genera en su entorno.
+      </p>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="impact">
+      @for (item of items; track item.tag) {
+        <div class="card">
+          <p class="tag">{{ item.tag }}</p>
+          <h3>{{ item.title }}</h3>
+          <p class="desc">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>

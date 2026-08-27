@@ -1,0 +1,259 @@
+<section id="sistema-inbuild">
+  <div class="wrap">
+    <div class="section-head">
+      <mezzo-eyebrow text="Tecnología Inbuild System" />
+      <h2>Construcción tradicional con lógica industrial.</h2>
+      <p>
+        Nuestra Línea de Hábitat integra Inbuild System como tecnología propia: paneles
+        autoportantes de acero galvanizado con núcleo de poliuretano inyectado, que llegan a obra
+        con la aislación y las cinco instalaciones —sanitaria, eléctrica, cloacal, aire
+        acondicionado y gas— resueltas de fábrica. Se montan 100% en seco, con ingeniería CNC
+        milimétrica.
+      </p>
+    </div>
+
+    <figure class="banner banner--dark">
+      <img src="assets/inbuild/planta-exterior.jpg" alt="Planta de fabricación de Inbuild System en el Parque Industrial Zárate" loading="lazy" />
+      <figcaption class="img-caption img-caption--dark">
+        Planta de fabricación · Parque Industrial Zárate. Fuente: Dossier técnico Inbuild System IB-DT-001.
+      </figcaption>
+    </figure>
+  </div>
+
+  <div class="stat-band tech-grid">
+    <div class="wrap stat-band-inner">
+      <div class="big-stat glow-amber">60%</div>
+      <div>
+        <p class="stat-title">de la obra se construye en planta, antes de pisar el terreno.</p>
+        <p class="stat-sub">
+          Instalaciones integradas en el panel desde fábrica: sanitaria · eléctrica · cloacal ·
+          aire acondicionado · gas.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- Ficha técnica del panel -->
+    <div class="block">
+      <h3 class="block-title">Ficha técnica del panel</h3>
+
+      <div class="spec-figures">
+        <div class="spec-layout">
+          <figure class="spec-figure spec-figure--portrait">
+            <img src="assets/inbuild/panel-corte.jpg" alt="Corte del panel Inbuild: capas de yeso, placa APA, chapa galvanizada y núcleo PUR" loading="lazy" />
+            <figcaption class="img-caption img-caption--dark">Corte del panel: todas las capas, en una sola pieza.</figcaption>
+          </figure>
+
+          <div class="specs">
+            @for (spec of specs; track spec.label) {
+              <div class="spec-row">
+                <span class="spec-label">{{ spec.label }}</span>
+                <span class="spec-value">{{ spec.value }}</span>
+              </div>
+            }
+          </div>
+        </div>
+
+        <figure class="spec-figure spec-figure--wide">
+          <img src="assets/inbuild/panel-capas.jpg" alt="Esquema de espesores del panel Inbuild, núcleo PUR de 140 mm" loading="lazy" />
+          <figcaption class="img-caption img-caption--dark">Núcleo PUR de 140 mm · instalaciones integradas de fábrica.</figcaption>
+        </figure>
+      </div>
+
+      <div class="feature-grid feature-grid--2">
+        @for (f of performanceHighlights; track f.title) {
+          <div class="feature-card feature-card--outline">
+            <h4>{{ f.title }}</h4>
+            <p>{{ f.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Instalaciones integradas -->
+    <div class="block">
+      <h3 class="block-title">Las instalaciones no se hacen en obra. Vienen adentro.</h3>
+      <p class="block-lede">
+        Cada panel sale de planta con sus canalizaciones resueltas. En obra, solo se conectan al
+        sistema general —llave en mano de cinco rubros, la coordinación pasa en la fábrica, no en
+        la obra.
+      </p>
+
+      <div class="gallery-2">
+        <figure>
+          <img src="assets/inbuild/modulo-sanitario-esquema.jpg" alt="Esquema técnico del módulo sanitario integrado en el panel" loading="lazy" />
+          <figcaption class="img-caption">Módulo sanitario: agua fría/caliente y desagües resueltos en el panel.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/inbuild/modulo-sanitario-equipado.jpg" alt="El mismo panel sanitario equipado con cocina, lavadero y baño" loading="lazy" />
+          <figcaption class="img-caption">El mismo panel, equipado: cocina, lavadero y baño de fábrica.</figcaption>
+        </figure>
+      </div>
+
+      <div class="feature-grid feature-grid--2">
+        @for (f of installationFeatures; track f.title) {
+          <div class="feature-card">
+            <span class="glyph" aria-hidden="true"></span>
+            <h4>{{ f.title }}</h4>
+            <p>{{ f.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Uniones y montaje -->
+    <div class="block">
+      <div class="split-layout">
+        <div>
+          <h3 class="block-title">El montaje es un procedimiento, no un oficio.</h3>
+          <p class="block-lede">
+            El sistema se monta en seco sobre perfilería propia de replanteo y encastre. La
+            calidad no depende del oficio previo de la cuadrilla: depende del sistema.
+          </p>
+        </div>
+
+        <figure class="spec-figure">
+          <img src="assets/inbuild/obra-montaje.jpg" alt="Edificio de siete pisos en montaje con paneles Inbuild System" loading="lazy" />
+          <figcaption class="img-caption img-caption--dark">
+            Montaje en seco sobre estructura — edificio real de 7 pisos, en ejecución con el
+            sistema.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="feature-grid feature-grid--3">
+        @for (f of assemblyFeatures; track f.title) {
+          <div class="feature-card feature-card--outline">
+            <h4>{{ f.title }}</h4>
+            <p>{{ f.description }}</p>
+          </div>
+        }
+      </div>
+      <div class="mini-stats">
+        @for (s of assemblyStats; track s.label) {
+          <div class="mini-stat">
+            <span class="value">{{ s.value }}</span>
+            <span class="label">{{ s.label }}</span>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Comparativo de tecnologías -->
+    <div class="block">
+      <h3 class="block-title">Dónde queda parado cada sistema</h3>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col">Obra tradicional</th>
+              <th scope="col">Steel Frame</th>
+              <th scope="col">Wood Frame</th>
+              <th scope="col" class="col-inbuild">Inbuild System</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (row of comparisonRows; track row.label) {
+              <tr>
+                <th scope="row">{{ row.label }}</th>
+                <td>{{ row.traditional }}</td>
+                <td>{{ row.steel }}</td>
+                <td>{{ row.wood }}</td>
+                <td class="col-inbuild">{{ row.inbuild }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <p class="footnote">
+        * Con terminaciones estándar · precio cerrado por contrato al firmar. El m² de pared (el
+        panel) y el m² de obra (la construcción terminada) son métricas distintas.
+      </p>
+      <p class="callout">Eficiencia neta: <strong>33% más eficiente</strong> por m² que la obra tradicional.</p>
+    </div>
+
+    <!-- Performance y status legal -->
+    <div class="block">
+      <h3 class="block-title">Activo inmobiliario de alta performance</h3>
+      <p class="block-lede">
+        El sistema está clasificado como construcción permanente. Para el banco, la escribanía y
+        la reventa, una obra Inbuild es un inmueble como cualquier otro —con mejor performance.
+      </p>
+      <div class="badge-grid">
+        @for (b of legalBadges; track b.title) {
+          <div class="badge-card">
+            <h4>{{ b.title }}</h4>
+            <p>{{ b.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div class="stat-band stat-band--triple tech-grid">
+    <div class="wrap triple-stats">
+      @for (s of impactStats; track s.label) {
+        <div class="triple-stat">
+          <span class="value glow-amber">{{ s.value }}</span>
+          <span class="label">{{ s.label }}</span>
+        </div>
+      }
+    </div>
+    <p class="wrap stat-caption">
+      Un desarrollo de 36 meses termina casi un año antes —menos capital inmovilizado y menos
+      indirectos por mes de obra.
+    </p>
+  </div>
+
+  <div class="wrap">
+    <!-- Capacidad industrial -->
+    <div class="block">
+      <h3 class="block-title">La fábrica detrás del sistema</h3>
+      <p class="block-lede">
+        Inbuild System se produce en planta propia en el Parque Industrial Zárate, Buenos Aires
+        —industria nacional, con más de 15 años de construcción industrializada ejecutada.
+      </p>
+
+      <div class="gallery-3">
+        <figure>
+          <img src="assets/inbuild/planta-robotica.jpg" alt="Robótica en la línea de producción de paneles Inbuild System" loading="lazy" />
+          <figcaption class="img-caption">Robótica en línea de producción.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/inbuild/planta-mesas-ensamble.jpg" alt="Mesas de ensamble de bastidores en la planta de Inbuild System" loading="lazy" />
+          <figcaption class="img-caption">Mesas de ensamble de bastidores.</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/inbuild/planta-estructura.jpg" alt="Montaje en seco de panelería sobre estructura de gran escala" loading="lazy" />
+          <figcaption class="img-caption">Montaje en seco sobre estructura de gran escala.</figcaption>
+        </figure>
+      </div>
+
+      <div class="capacity-grid">
+        @for (s of capacityStats; track s.label) {
+          <div class="capacity-item">
+            <span class="value">{{ s.value }}</span>
+            <span class="label">{{ s.label }}</span>
+          </div>
+        }
+      </div>
+      <div class="logistics">
+        <div>
+          <p class="tag">Obra tradicional · 600 m² puestos en obra</p>
+          <p>5 camiones como mínimo · 117 toneladas transportadas · entre 5 y 9 ingresos a obra.</p>
+        </div>
+        <div>
+          <p class="tag">Inbuild System · 600 m² puestos en obra</p>
+          <p>1 camión. Una entrega y una descarga, con la carga panelizada y secuenciada según el plano de panelizado.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <p>¿Querés el dossier técnico completo del sistema, con planos y detalles de ingeniería?</p>
+      <a class="cta" href="#contacto">Pedir el dossier técnico</a>
+    </div>
+  </div>
+</section>

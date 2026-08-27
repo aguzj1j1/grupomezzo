@@ -1,0 +1,43 @@
+<section id="servicios">
+  <div class="wrap">
+    <div class="section-head">
+      <mezzo-eyebrow text="Líneas de acción" />
+      <h2>Cinco líneas de acción, un mismo articulador integral.</h2>
+      <p>
+        Del suelo al edificio en marcha: desarrollamos, construimos y articulamos cada pieza del
+        proyecto bajo una misma coordinación —sin tercerizar lo crítico.
+      </p>
+    </div>
+
+    <div class="pipeline">
+      @for (step of steps; track step.num) {
+        <div class="pstep">
+          <div class="pstep-media">
+            <img [src]="step.image" [alt]="step.imageAlt" loading="lazy" />
+            <span class="num">{{ step.num }}</span>
+          </div>
+          <div class="pstep-body">
+            <h3>{{ step.title }}</h3>
+            <p>{{ step.description }}</p>
+
+            @if (step.items?.length) {
+              <ul class="items">
+                @for (item of step.items; track item.title) {
+                  <li>
+                    <strong>{{ item.title }}</strong>
+                    <span>{{ item.description }}</span>
+                  </li>
+                }
+              </ul>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <p class="disclaimer">
+      * Imágenes ilustrativas de referencia, no corresponden a fotografías reales de los
+      proyectos de Grupo Mezzo.
+    </p>
+  </div>
+</section>

@@ -1,0 +1,31 @@
+<section id="sostenibilidad" class="dark-panel tech-grid">
+  <div class="wrap grid">
+    <div>
+      <mezzo-eyebrow text="El estándar, no la excepción" />
+      <h2>Infraestructura pensada para la transición energética.</h2>
+      <p class="lede">
+        Diseñamos cada parque con la sostenibilidad incorporada al plano, no como un agregado
+        posterior: infraestructura preparada para sistemas de gestión de la energía, generación
+        distribuida y un uso más eficiente del agua y los residuos.
+      </p>
+    </div>
+    <ul>
+      @for (point of points; track point) {
+        <li>{{ point }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <figure class="banner banner--dark">
+      <img
+        src="https://loremflickr.com/1600/560/solar,panel?lock=220"
+        alt="Infraestructura energética sustentable dentro de un parque industrial"
+        loading="lazy"
+      />
+      <figcaption class="img-caption img-caption--dark">
+        Imagen ilustrativa de referencia.
+      </figcaption>
+    </figure>
+  </div>
+</section>

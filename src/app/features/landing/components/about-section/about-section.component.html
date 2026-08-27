@@ -1,0 +1,36 @@
+<section id="nosotros">
+  <div class="wrap grid">
+    <div>
+      <mezzo-eyebrow text="Sobre Grupo Mezzo" />
+      <h2>El articulador integral entre el suelo, el capital y las instituciones.</h2>
+      <p class="lede">
+        Grupo Mezzo es la estructura que conecta al inversor, al Estado y a la comunidad en un
+        mismo proyecto. Gestionamos el desarrollo de punta a punta —desde la reconversión de suelo
+        rural hasta la puesta en marcha de parques de alto rendimiento, infraestructura vial y de
+        servicios, y soluciones habitacionales— con la capacidad de Gestión Grupo Mezzo necesaria para
+        articular financiamiento, normativa y ejecución bajo un mismo equipo. No delegamos la
+        coordinación: la ejercemos, en cada una de las cinco líneas de acción que sostienen
+        nuestro portafolio.
+      </p>
+    </div>
+    <ul>
+      @for (pillar of pillars; track pillar) {
+        <li>{{ pillar }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="wrap">
+    <figure class="banner">
+      <img
+        src="https://loremflickr.com/1600/560/blueprint,architecture?lock=210"
+        alt="Equipo de gestión articulando un desarrollo integral entre suelo, capital e instituciones"
+        loading="lazy"
+      />
+      <figcaption class="img-caption">
+        Imagen ilustrativa de referencia — no corresponde a un proyecto o equipo real de Grupo
+        Mezzo.
+      </figcaption>
+    </figure>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<section id="proyectos">
+  <div class="wrap">
+    <div class="section-head">
+      <mezzo-eyebrow text="Nuestro trabajo"></mezzo-eyebrow>
+      <h2>Desarrollos en los que participamos.</h2>
+      <p>
+        Una muestra representativa del tipo de proyectos que gestionamos de punta a punta.
+      </p>
+    </div>
+
+    <div class="gallery">
+      <article class="card" *ngFor="let project of projects; trackBy: trackByTitle">
+        <div class="media">
+          <img [src]="project.image" [alt]="project.title" loading="lazy" />
+          <span class="category">{{ project.category }}</span>
+        </div>
+        <div class="info">
+          <h3>{{ project.title }}</h3>
+          <p class="location">{{ project.location }}</p>
+          <p class="desc">{{ project.description }}</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="disclaimer">
+      * Imágenes ilustrativas de referencia, no corresponden a fotografías reales de los
+      proyectos mencionados.
+    </p>
+  </div>
+</section>

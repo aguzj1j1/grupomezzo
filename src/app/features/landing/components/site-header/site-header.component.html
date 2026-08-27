@@ -1,0 +1,39 @@
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="mark" aria-label="Grupo Mezzo, inicio">
+      <mezzo-logo-mark [size]="38" />
+      <span class="brand-text">Grupo Me<strong>zzo</strong></span>
+    </a>
+
+    <nav class="nav-desktop">
+      <ul>
+        @for (link of navLinks; track link.href) {
+          <li><a [href]="link.href">{{ link.label }}</a></li>
+        }
+      </ul>
+      <a class="cta" href="#contacto">Hablar con nosotros</a>
+    </nav>
+
+    <button
+      class="menu-btn"
+      type="button"
+      [attr.aria-expanded]="isMenuOpen()"
+      aria-controls="mobileNav"
+      aria-label="Abrir menú"
+      (click)="toggleMenu()"
+    >
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  @if (isMenuOpen()) {
+    <nav id="mobileNav" class="nav-mobile">
+      <ul>
+        @for (link of navLinks; track link.href) {
+          <li><a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a></li>
+        }
+        <li><a href="#contacto" (click)="closeMenu()">Hablar con nosotros →</a></li>
+      </ul>
+    </nav>
+  }
+</header>

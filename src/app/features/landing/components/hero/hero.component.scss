@@ -1,0 +1,124 @@
+@use '../../../../core/styles/effects' as fx;
+
+.hero {
+  padding: 64px 0 40px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 56px;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+h1 {
+  font-size: clamp(34px, 4.6vw, 56px);
+  margin-top: 18px;
+}
+
+.lede {
+  margin-top: 22px;
+  font-size: 17.5px;
+  color: var(--mezzo-ink-soft);
+  max-width: 46ch;
+}
+
+.ctas {
+  display: flex;
+  gap: 14px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.siteplan {
+  margin: 0;
+  position: relative;
+  background: var(--mezzo-paper);
+  @include fx.grid-lines(rgba(26, 27, 24, 0.05), 28px);
+  border: 1px solid var(--mezzo-line);
+  padding: 22px 22px 18px;
+
+  .label-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-family: var(--mezzo-font-mono);
+    font-size: 11px;
+    color: var(--mezzo-steel);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  figcaption {
+    font-family: var(--mezzo-font-mono);
+    font-size: 11px;
+    color: var(--mezzo-steel);
+    margin-top: 12px;
+    letter-spacing: 0.03em;
+  }
+
+  svg {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.parcel {
+  fill: none;
+  stroke: var(--mezzo-graphite);
+  stroke-width: 1.4;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: rise 0.6s ease forwards;
+  animation-delay: 0.1s;
+
+  &--fill {
+    fill: var(--mezzo-graphite);
+    opacity: 0.9;
+  }
+
+  &--accent {
+    stroke: var(--mezzo-amber);
+    stroke-width: 1.6;
+  }
+}
+
+.road {
+  stroke: var(--mezzo-steel);
+  stroke-width: 1;
+  stroke-dasharray: 4 5;
+  opacity: 0;
+  animation: fade 0.8s ease 0.5s forwards;
+}
+
+.label {
+  font-family: var(--mezzo-font-mono);
+  font-size: 10px;
+
+  &--on-fill {
+    fill: var(--mezzo-paper);
+  }
+
+  &--accent {
+    fill: var(--mezzo-amber-ink);
+  }
+}
+
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}

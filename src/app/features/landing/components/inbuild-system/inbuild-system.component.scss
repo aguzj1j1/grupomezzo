@@ -1,0 +1,539 @@
+@use '../../../../core/styles/effects' as fx;
+
+:host {
+  display: block;
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: clamp(26px, 3.2vw, 36px);
+    margin-top: 14px;
+  }
+
+  p {
+    margin-top: 14px;
+    color: var(--mezzo-ink-soft);
+    font-size: 16px;
+    max-width: 60ch;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Franjas de dato — mismo lenguaje visual del footer (fondo graphite / texto
+// paper), reservado para los números fuertes del sistema.
+// ---------------------------------------------------------------------------
+.stat-band {
+  background: var(--mezzo-graphite);
+  color: var(--mezzo-paper);
+  padding: 40px 0;
+  margin: 48px 0;
+
+  &.tech-grid {
+    @include fx.grid-lines(rgba(255, 255, 255, 0.06), 36px);
+  }
+}
+
+.stat-band-inner {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 28px;
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+.big-stat {
+  font-family: var(--mezzo-font-display);
+  font-size: clamp(52px, 7vw, 84px);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--mezzo-amber);
+}
+
+.stat-title {
+  font-size: 18px;
+  font-weight: 600;
+  max-width: 44ch;
+}
+
+.stat-sub {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #b9baae;
+  max-width: 52ch;
+}
+
+// ---------------------------------------------------------------------------
+// Bloques de contenido
+// ---------------------------------------------------------------------------
+.block {
+  padding: 56px 0;
+  border-top: 1px solid var(--mezzo-line);
+
+  &:first-child {
+    border-top: 0;
+  }
+}
+
+.block-title {
+  font-size: clamp(20px, 2.4vw, 26px);
+  max-width: 34ch;
+}
+
+.block-lede {
+  margin-top: 12px;
+  color: var(--mezzo-ink-soft);
+  font-size: 15.5px;
+  max-width: 58ch;
+}
+
+// Galerías de fotos reales del dossier técnico
+.gallery-2,
+.gallery-3 {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid var(--mezzo-line);
+  }
+}
+
+.gallery-2 {
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.gallery-3 {
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+
+    img {
+      aspect-ratio: 16 / 11;
+    }
+  }
+}
+
+// Figuras técnicas (corte de panel + diagrama de espesores) — cada una
+// conserva su relación de aspecto real, sin recortar las cotas ni las
+// etiquetas del esquema. Fondo oscuro porque ambas imágenes ya traen ese
+// mismo fondo del dossier original.
+.spec-figures {
+  margin-top: 28px;
+  display: grid;
+  gap: 20px;
+}
+
+// Foto del corte + ficha, lado a lado — la foto deja de ser un sello
+// flotando en el medio de la página y pasa a acompañar el dato técnico.
+.spec-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  align-items: start;
+
+  @media (min-width: 800px) {
+    grid-template-columns: 300px 1fr;
+  }
+}
+
+.spec-figure {
+  margin: 0;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: #14151d;
+    border: 1px solid var(--mezzo-line);
+  }
+
+  &--portrait img {
+    aspect-ratio: 4 / 5;
+  }
+
+  &--wide img {
+    aspect-ratio: 2.1 / 1;
+  }
+}
+
+// Texto + foto lado a lado — mismo criterio que la ficha técnica: la
+// imagen acompaña el contenido en vez de ocupar una franja aparte.
+.split-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 28px;
+
+  @media (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Ficha técnica — lista label/valor
+.specs {
+  display: grid;
+  gap: 1px;
+  background: var(--mezzo-line);
+  border: 1px solid var(--mezzo-line);
+  align-content: start;
+}
+
+.spec-row {
+  background: var(--mezzo-paper);
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 16px;
+  padding: 14px 18px;
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+}
+
+.spec-label {
+  font-family: var(--mezzo-font-mono);
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--mezzo-steel);
+}
+
+.spec-value {
+  font-size: 14.5px;
+  color: var(--mezzo-graphite);
+}
+
+// Grillas de tarjetas reutilizables
+.feature-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    &--2 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &--3 {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+.feature-card {
+  background: var(--mezzo-paper);
+  border: 1px solid var(--mezzo-line);
+  padding: 22px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--mezzo-font-body);
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--mezzo-ink-soft);
+  }
+
+  &--outline {
+    background: transparent;
+    border: 1px solid var(--mezzo-graphite);
+  }
+}
+
+.glyph {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 14px;
+  background: linear-gradient(
+    115deg,
+    transparent 0 40%,
+    var(--mezzo-amber) 40% 60%,
+    transparent 60% 100%
+  );
+}
+
+// Mini estadísticas de proceso (montaje)
+.mini-stats {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--mezzo-line);
+  border-left: 1px solid var(--mezzo-line);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.mini-stat {
+  padding: 22px 20px;
+  border-right: 1px solid var(--mezzo-line);
+  border-bottom: 1px solid var(--mezzo-line);
+
+  .value {
+    display: block;
+    font-family: var(--mezzo-font-display);
+    font-weight: 700;
+    font-size: 26px;
+    color: var(--mezzo-amber-ink);
+  }
+
+  .label {
+    display: block;
+    margin-top: 6px;
+    font-size: 13.5px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+// Tabla comparativa
+.table-wrap {
+  margin-top: 28px;
+  overflow-x: auto;
+  border: 1px solid var(--mezzo-line);
+}
+
+.compare {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-size: 13.5px;
+
+  th,
+  td {
+    padding: 13px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--mezzo-line);
+    vertical-align: top;
+  }
+
+  thead th {
+    font-family: var(--mezzo-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mezzo-steel);
+    background: var(--mezzo-paper);
+    border-bottom: 1px solid var(--mezzo-line);
+  }
+
+  tbody th {
+    font-family: var(--mezzo-font-body);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--mezzo-graphite);
+    white-space: nowrap;
+  }
+
+  td {
+    color: var(--mezzo-ink-soft);
+  }
+
+  .col-inbuild {
+    background: rgba(217, 138, 37, 0.08);
+    color: var(--mezzo-graphite);
+    font-weight: 500;
+    border-left: 2px solid var(--mezzo-amber);
+  }
+
+  tbody tr:last-child th,
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+}
+
+.footnote {
+  margin-top: 14px;
+  font-size: 12px;
+  color: var(--mezzo-steel);
+  font-style: italic;
+  max-width: 70ch;
+}
+
+.callout {
+  margin-top: 18px;
+  font-size: 16px;
+  color: var(--mezzo-graphite);
+
+  strong {
+    color: var(--mezzo-amber-ink);
+  }
+}
+
+// Sellos legales
+.badge-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1px;
+  background: var(--mezzo-line);
+  border: 1px solid var(--mezzo-line);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.badge-card {
+  background: var(--mezzo-paper);
+  padding: 20px 18px;
+
+  h4 {
+    font-size: 14.5px;
+    font-weight: 600;
+    font-family: var(--mezzo-font-body);
+  }
+
+  p {
+    margin-top: 6px;
+    font-size: 13px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+// Franja de triple estadística
+.stat-band--triple {
+  .triple-stats {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: left;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .triple-stat {
+    .value {
+      display: block;
+      font-family: var(--mezzo-font-display);
+      font-weight: 700;
+      font-size: clamp(30px, 4vw, 42px);
+      color: var(--mezzo-amber);
+    }
+
+    .label {
+      display: block;
+      margin-top: 4px;
+      font-size: 13.5px;
+      color: #c7c4b8;
+    }
+  }
+
+  .stat-caption {
+    margin-top: 22px;
+    padding-top: 22px;
+    border-top: 1px solid #3a3b34;
+    font-size: 14px;
+    color: #c7c4b8;
+    max-width: 62ch;
+  }
+}
+
+// Capacidad industrial
+.capacity-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--mezzo-line);
+  border: 1px solid var(--mezzo-line);
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.capacity-item {
+  background: var(--mezzo-paper);
+  padding: 20px 18px;
+
+  .value {
+    display: block;
+    font-family: var(--mezzo-font-display);
+    font-weight: 700;
+    font-size: 22px;
+    color: var(--mezzo-graphite);
+  }
+
+  .label {
+    display: block;
+    margin-top: 6px;
+    font-size: 12.5px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+.logistics {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  > div {
+    padding: 18px 20px;
+    border: 1px solid var(--mezzo-line);
+  }
+
+  .tag {
+    font-family: var(--mezzo-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mezzo-amber-ink);
+  }
+
+  p + p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+// CTA de cierre
+.cta-row {
+  margin-top: 8px;
+  padding: 36px 0 0;
+  border-top: 1px solid var(--mezzo-line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 44ch;
+  }
+}

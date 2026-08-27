@@ -1,0 +1,79 @@
+// ---------------------------------------------------------------------------
+// Efectos — utilidades para el tinte "blueprint industrial" del sitio:
+// grilla técnica de fondo y resplandor ámbar, aplicadas con moderación sobre
+// superficies acotadas (paneles oscuros, franjas de dato, footer, la
+// tarjeta del plano de sitio) donde suman sin competir con el texto.
+//
+// `grid-lines` se expone como MIXIN, no como clase global: los paneles que
+// la usan (dark-panel, stat-band, footer, siteplan) ya fijan su propio
+// `background` con shorthand en su SCSS de componente, y una clase global
+// de menor especificidad perdería ese pulso de cascada. Se importa con
+// `@use '.../core/styles/effects' as fx;` y se agrega junto al `background`
+// existente de cada componente.
+//
+// El resto (glow, banner, etiquetas sobre imagen) sí son clases globales:
+// no pisan ningún estilo previo, así que los componentes standalone las
+// heredan sin duplicar CSS.
+// ---------------------------------------------------------------------------
+
+@mixin grid-lines($color, $size: 40px) {
+  background-image: linear-gradient($color 1px, transparent 1px),
+    linear-gradient(90deg, $color 1px, transparent 1px);
+  background-size: $size $size;
+}
+
+// Resplandor ámbar — números y acentos sobre fondo oscuro.
+.glow-amber {
+  text-shadow: 0 0 22px rgba(217, 138, 37, 0.55);
+}
+
+.glow-amber-ring {
+  box-shadow: 0 0 0 1px rgba(217, 138, 37, 0.4), 0 0 26px rgba(217, 138, 37, 0.18);
+}
+
+// Banner fotográfico de ancho completo, con su leyenda mono debajo —
+// patrón reutilizado en Sobre Nosotros, Sostenibilidad y Sistema Inbuild.
+.banner {
+  margin: 40px 0 0;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 21 / 7;
+    object-fit: cover;
+    border: 1px solid var(--mezzo-line);
+  }
+
+  &--dark img {
+    border-color: rgba(255, 255, 255, 0.14);
+  }
+}
+
+.img-caption {
+  margin-top: 10px;
+  font-family: var(--mezzo-font-mono);
+  font-size: 11px;
+  color: var(--mezzo-steel);
+  font-style: italic;
+
+  &--dark {
+    color: #9aa89c;
+  }
+}
+
+// Placa mono sobre imagen — mismo lenguaje del badge de categoría de la
+// galería de proyectos, reutilizable donde haga falta una etiqueta sobre
+// una foto (p. ej. el número de línea de acción sobre su miniatura).
+.img-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-family: var(--mezzo-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  color: #fff;
+  background: linear-gradient(115deg, #4684c2, #e8ac67);
+  background-size: 200% 200%;
+}

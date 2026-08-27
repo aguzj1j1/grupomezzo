@@ -1,0 +1,57 @@
+.section-head {
+  max-width: 640px;
+  margin-bottom: 48px;
+
+  h2 {
+    font-size: clamp(26px, 3.2vw, 36px);
+    margin-top: 14px;
+  }
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--mezzo-line);
+  border: 1px solid var(--mezzo-line);
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.benefit {
+  background: var(--mezzo-paper);
+  padding: 30px 26px;
+
+  h3 {
+    font-size: 16.5px;
+    font-weight: 600;
+    font-family: var(--mezzo-font-body);
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: 14.5px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+// Glifo consistente con el isotipo (misma barra diagonal, a escala pequeña)
+// en vez de un set de íconos genéricos distintos por card.
+.glyph {
+  display: block;
+  width: 22px;
+  height: 22px;
+  margin-bottom: 16px;
+  background: linear-gradient(
+    115deg,
+    transparent 0 40%,
+    var(--mezzo-amber) 40% 60%,
+    transparent 60% 100%
+  );
+}

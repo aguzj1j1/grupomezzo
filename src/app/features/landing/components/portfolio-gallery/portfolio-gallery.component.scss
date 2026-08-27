@@ -1,0 +1,111 @@
+.section-head {
+  max-width: 640px;
+  margin-bottom: 48px;
+
+  h2 {
+    font-size: clamp(26px, 3.2vw, 36px);
+    margin-top: 14px;
+  }
+
+  p {
+    margin-top: 14px;
+    color: var(--mezzo-ink-soft);
+    font-size: 16px;
+    max-width: 56ch;
+  }
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: var(--mezzo-paper);
+  border: 1px solid var(--mezzo-line);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -12px rgba(26, 27, 24, 0.25);
+
+    img {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+}
+
+.category {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-family: var(--mezzo-font-mono);
+  font-size: 10.5px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 5px 10px;
+  color: #fff;
+  background: linear-gradient(115deg, #4684c2, #e8ac67);
+  background-size: 200% 200%;
+  animation: shift 6s ease infinite;
+}
+
+.info {
+  padding: 18px 20px 22px;
+
+  h3 {
+    font-size: 17px;
+    font-weight: 600;
+    font-family: var(--mezzo-font-body);
+  }
+
+  .location {
+    margin-top: 4px;
+    font-family: var(--mezzo-font-mono);
+    font-size: 11.5px;
+    color: var(--mezzo-steel);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .desc {
+    margin-top: 10px;
+    font-size: 14.5px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--mezzo-steel);
+  font-style: italic;
+}
+
+@keyframes shift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
