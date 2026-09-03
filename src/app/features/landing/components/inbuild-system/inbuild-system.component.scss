@@ -507,6 +507,18 @@
   }
 }
 
+.logistics-photo {
+  margin-top: 20px;
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border: 1px solid var(--mezzo-line);
+  }
+}
+
 .logistics {
   margin-top: 20px;
   display: grid;
