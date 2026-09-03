@@ -9,7 +9,12 @@
     </div>
 
     <div class="gallery">
-      <article class="card" *ngFor="let project of projects; trackBy: trackByTitle">
+      <article
+        class="card"
+        *ngFor="let project of projects; trackBy: trackByTitle; let i = index"
+        mezzoReveal
+        [revealDelay]="(i % 3) * 90"
+      >
         <div class="media">
           <img [src]="project.image" [alt]="project.title" loading="lazy" />
           <span class="category">{{ project.category }}</span>

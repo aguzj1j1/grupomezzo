@@ -49,8 +49,8 @@
 
     <div class="wrap">
       <div class="track" #track (scroll)="onTrackScroll()" tabindex="0" aria-label="Carrusel de fases del proyecto">
-        @for (slide of slides; track slide.num) {
-          <article class="slide">
+        @for (slide of slides; track slide.num; let i = $index) {
+          <article class="slide" mezzoReveal [revealDelay]="(i % 4) * 70">
             <span class="num">{{ slide.num }}</span>
             <h3>{{ slide.title }}</h3>
             <p>{{ slide.description }}</p>

@@ -14,8 +14,8 @@
       </p>
     </div>
     <ul>
-      @for (pillar of pillars; track pillar) {
-        <li>{{ pillar }}</li>
+      @for (pillar of pillars; track pillar; let i = $index) {
+        <li mezzoReveal [revealDelay]="i * 70">{{ pillar }}</li>
       }
     </ul>
   </div>

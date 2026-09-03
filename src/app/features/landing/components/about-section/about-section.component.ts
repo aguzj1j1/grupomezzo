@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionEyebrowComponent } from '../../../../shared/components/section-eyebrow/section-eyebrow.component';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'mezzo-about-section',
   standalone: true,
-  imports: [SectionEyebrowComponent],
+  imports: [SectionEyebrowComponent, ScrollRevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './about-section.component.html',
   styleUrl: './about-section.component.scss',

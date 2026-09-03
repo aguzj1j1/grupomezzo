@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionEyebrowComponent } from '../../../../shared/components/section-eyebrow/section-eyebrow.component';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { AllianceItem } from '../../landing.models';
 
 @Component({
   selector: 'mezzo-strategic-alliances',
   standalone: true,
-  imports: [SectionEyebrowComponent],
+  imports: [SectionEyebrowComponent, ScrollRevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './strategic-alliances.component.html',
   styleUrl: './strategic-alliances.component.scss',

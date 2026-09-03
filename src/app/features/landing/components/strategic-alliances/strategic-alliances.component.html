@@ -10,8 +10,8 @@
     </div>
 
     <ul class="alliances">
-      @for (alliance of alliances; track alliance.name) {
-        <li class="alliance-card">
+      @for (alliance of alliances; track alliance.name; let i = $index) {
+        <li class="alliance-card" mezzoReveal [revealDelay]="i * 90">
           @if (alliance.logo) {
             <img class="logo" [src]="alliance.logo" [alt]="alliance.logoAlt || alliance.name" loading="lazy" />
           }

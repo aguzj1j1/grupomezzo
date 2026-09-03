@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SiteHeaderComponent } from './components/site-header/site-header.component';
 import { HeroComponent } from './components/hero/hero.component';
+import { HabitatSpotlightComponent } from './components/habitat-spotlight/habitat-spotlight.component';
 import { AboutSectionComponent } from './components/about-section/about-section.component';
 import { ServicesPipelineComponent } from './components/services-pipeline/services-pipeline.component';
 import { CapabilitiesSliderComponent } from './components/capabilities-slider/capabilities-slider.component';
@@ -18,6 +19,7 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
   imports: [
     SiteHeaderComponent,
     HeroComponent,
+    HabitatSpotlightComponent,
     AboutSectionComponent,
     ServicesPipelineComponent,
     CapabilitiesSliderComponent,

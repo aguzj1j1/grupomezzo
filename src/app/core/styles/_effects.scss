@@ -22,6 +22,25 @@
   background-size: $size $size;
 }
 
+// Revelado al scrollear — aplicado por ScrollRevealDirective (mezzoReveal).
+// La transición vive acá (no en el componente) porque la clase la agrega
+// la directiva vía Renderer2, no un binding de Angular.
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  // transition-delay se fija inline por la directiva (revealDelay).
+
+  &.reveal-visible {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal-visible {
+  opacity: 1;
+}
+
 // Resplandor ámbar — números y acentos sobre fondo oscuro.
 .glow-amber {
   text-shadow: 0 0 22px rgba(217, 138, 37, 0.55);

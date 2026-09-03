@@ -38,7 +38,7 @@
 
   <div class="stat-band tech-grid">
     <div class="wrap stat-band-inner">
-      <div class="big-stat glow-amber">60%</div>
+      <div class="big-stat glow-amber" mezzoReveal mezzoCountUp="60%">60%</div>
       <div>
         <p class="stat-title">de la obra se construye en planta, antes de pisar el terreno.</p>
         <p class="stat-sub">
@@ -147,9 +147,9 @@
         }
       </div>
       <div class="mini-stats">
-        @for (s of assemblyStats; track s.label) {
-          <div class="mini-stat">
-            <span class="value">{{ s.value }}</span>
+        @for (s of assemblyStats; track s.label; let i = $index) {
+          <div class="mini-stat" mezzoReveal [revealDelay]="i * 80">
+            <span class="value" [mezzoCountUp]="s.value">{{ s.value }}</span>
             <span class="label">{{ s.label }}</span>
           </div>
         }
@@ -210,9 +210,9 @@
 
   <div class="stat-band stat-band--triple tech-grid">
     <div class="wrap triple-stats">
-      @for (s of impactStats; track s.label) {
-        <div class="triple-stat">
-          <span class="value glow-amber">{{ s.value }}</span>
+      @for (s of impactStats; track s.label; let i = $index) {
+        <div class="triple-stat" mezzoReveal [revealDelay]="i * 90">
+          <span class="value glow-amber" [mezzoCountUp]="s.value">{{ s.value }}</span>
           <span class="label">{{ s.label }}</span>
         </div>
       }
@@ -248,9 +248,9 @@
       </div>
 
       <div class="capacity-grid">
-        @for (s of capacityStats; track s.label) {
-          <div class="capacity-item">
-            <span class="value">{{ s.value }}</span>
+        @for (s of capacityStats; track s.label; let i = $index) {
+          <div class="capacity-item" mezzoReveal [revealDelay]="i * 80">
+            <span class="value" [mezzoCountUp]="s.value">{{ s.value }}</span>
             <span class="label">{{ s.label }}</span>
           </div>
         }

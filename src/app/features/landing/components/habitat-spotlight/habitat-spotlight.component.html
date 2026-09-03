@@ -1,0 +1,38 @@
+<section id="vivienda-inbuild" class="dark-panel tech-grid">
+  <div class="wrap grid">
+    <div mezzoReveal>
+      <mezzo-eyebrow text="Hábitat con tecnología Inbuild System" />
+      <h2>Tu próxima vivienda, con sistema constructivo real y comprobado.</h2>
+      <p class="lede">
+        Vivienda de interés social y desarrollos residenciales, construidos con Inbuild System:
+        paneles con instalaciones integradas de fábrica, montados 100% en seco, con plazo y
+        calidad garantizados por contrato.
+      </p>
+
+      <div class="stats">
+        @for (stat of stats; track stat.label; let i = $index) {
+          <div class="stat" mezzoReveal [revealDelay]="120 + i * 90">
+            <span class="value glow-amber" [mezzoCountUp]="stat.value">{{ stat.value }}</span>
+            <span class="label">{{ stat.label }}</span>
+          </div>
+        }
+      </div>
+
+      <div class="ctas">
+        <a class="cta" href="#sistema-inbuild">Ver Sistema Inbuild</a>
+        <a class="cta cta--ghost" href="#contacto">Conversemos sobre tu vivienda</a>
+      </div>
+    </div>
+
+    <figure class="photo" mezzoReveal [revealDelay]="180">
+      <img
+        src="assets/services/vivienda-inbuild-terminada.jpg"
+        alt="Vivienda real terminada con sistema constructivo Inbuild"
+        loading="lazy"
+      />
+      <figcaption class="img-caption img-caption--dark">
+        Vivienda real, construida con sistema Inbuild.
+      </figcaption>
+    </figure>
+  </div>
+</section>

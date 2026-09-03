@@ -10,8 +10,8 @@
     </div>
 
     <div class="pipeline">
-      @for (step of steps; track step.num) {
-        <div class="pstep">
+      @for (step of steps; track step.num; let i = $index) {
+        <div class="pstep" mezzoReveal [revealDelay]="(i % 2) * 90">
           <div class="pstep-media">
             <img [src]="step.image" [alt]="step.imageAlt" loading="lazy" />
             <span class="num">{{ step.num }}</span>

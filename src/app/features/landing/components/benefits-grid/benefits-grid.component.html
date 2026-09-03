@@ -6,8 +6,8 @@
     </div>
 
     <div class="benefits">
-      @for (benefit of benefits; track benefit.title) {
-        <div class="benefit">
+      @for (benefit of benefits; track benefit.title; let i = $index) {
+        <div class="benefit" mezzoReveal [revealDelay]="(i % 3) * 80">
           <span class="glyph" aria-hidden="true"></span>
           <h3>{{ benefit.title }}</h3>
           <p>{{ benefit.description }}</p>

@@ -1,10 +1,11 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionEyebrowComponent } from '../../../../shared/components/section-eyebrow/section-eyebrow.component';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 
 @Component({
   selector: 'mezzo-sustainability-panel',
   standalone: true,
-  imports: [SectionEyebrowComponent],
+  imports: [SectionEyebrowComponent, ScrollRevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './sustainability-panel.component.html',
   styleUrl: './sustainability-panel.component.scss',

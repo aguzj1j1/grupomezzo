@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SectionEyebrowComponent } from '../../../../shared/components/section-eyebrow/section-eyebrow.component';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { ProjectItem } from '../../landing.models';
 
 @Component({
   selector: 'mezzo-portfolio-gallery',
   standalone: true,
-  imports: [CommonModule, SectionEyebrowComponent],
+  imports: [CommonModule, SectionEyebrowComponent, ScrollRevealDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './portfolio-gallery.component.html',
   styleUrl: './portfolio-gallery.component.scss',

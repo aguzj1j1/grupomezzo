@@ -1,5 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { SectionEyebrowComponent } from '../../../../shared/components/section-eyebrow/section-eyebrow.component';
+import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
+import { CountUpDirective } from '../../../../shared/directives/count-up.directive';
 
 interface SpecRow {
   readonly label: string;
@@ -35,7 +37,7 @@ interface StatItem {
 @Component({
   selector: 'mezzo-inbuild-system',
   standalone: true,
-  imports: [SectionEyebrowComponent],
+  imports: [SectionEyebrowComponent, ScrollRevealDirective, CountUpDirective],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './inbuild-system.component.html',
   styleUrl: './inbuild-system.component.scss',

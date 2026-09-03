@@ -1,0 +1,116 @@
+@use '../../../../core/styles/effects' as fx;
+
+.dark-panel {
+  background: var(--mezzo-graphite);
+  color: var(--mezzo-paper);
+
+  &.tech-grid {
+    @include fx.grid-lines(rgba(255, 255, 255, 0.06), 36px);
+  }
+
+  ::ng-deep .eyebrow {
+    color: #c9c9c2;
+
+    &::before {
+      background: var(--mezzo-amber);
+    }
+  }
+
+  h2 {
+    color: #fff;
+    font-size: clamp(28px, 3.6vw, 40px);
+    margin-top: 14px;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+.lede {
+  margin-top: 16px;
+  font-size: 16.5px;
+  max-width: 52ch;
+  opacity: 0.92;
+}
+
+.stats {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 28px;
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.stat {
+  .value {
+    display: block;
+    font-family: var(--mezzo-font-display);
+    font-size: clamp(30px, 4vw, 40px);
+    font-weight: 700;
+    color: var(--mezzo-amber);
+    line-height: 1;
+  }
+
+  .label {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    max-width: 16ch;
+    opacity: 0.85;
+  }
+}
+
+.ctas {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+// El .cta--ghost global (_layout.scss) está pensado para fondo claro
+// (borde/texto graphite). Acá el panel es oscuro, así que se invierte.
+.cta--ghost {
+  color: var(--mezzo-paper);
+  border-color: rgba(255, 255, 255, 0.5);
+
+  &:hover {
+    background: var(--mezzo-paper);
+    color: var(--mezzo-graphite);
+  }
+}
+
+.photo {
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+
+  figcaption {
+    margin-top: 10px;
+  }
+}
+
+.img-caption {
+  font-family: var(--mezzo-font-mono);
+  font-size: 11px;
+  font-style: italic;
+
+  &--dark {
+    color: #b9b9b2;
+  }
+}

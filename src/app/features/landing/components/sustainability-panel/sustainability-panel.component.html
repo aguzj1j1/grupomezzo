@@ -10,8 +10,8 @@
       </p>
     </div>
     <ul>
-      @for (point of points; track point) {
-        <li>{{ point }}</li>
+      @for (point of points; track point; let i = $index) {
+        <li mezzoReveal [revealDelay]="i * 70">{{ point }}</li>
       }
     </ul>
   </div>

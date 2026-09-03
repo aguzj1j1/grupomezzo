@@ -35,6 +35,15 @@
   padding: 30px 22px;
   border-bottom: 1px solid var(--mezzo-line);
   border-right: 1px solid var(--mezzo-line);
+  transition: background 0.15s ease;
+
+  &:hover {
+    background: var(--mezzo-paper);
+  }
+
+  &:hover .tag {
+    color: var(--mezzo-amber-ink);
+  }
 
   &:nth-child(4n) {
     border-right: 0;
