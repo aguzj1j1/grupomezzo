@@ -19,6 +19,7 @@ header {
   align-items: center;
   gap: 12px;
   text-decoration: none;
+  flex-shrink: 0;
 
   .brand-text {
     font-family: var(--mezzo-font-display);
@@ -27,6 +28,7 @@ header {
     letter-spacing: -0.02em;
     color: var(--mezzo-graphite);
     line-height: 1;
+    white-space: nowrap;
 
     strong {
       display: inline-block;
