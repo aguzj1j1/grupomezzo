@@ -35,11 +35,11 @@ export class PortfolioGalleryComponent {
       description: 'Depósito clase A diseñado para operación cross-dock con acceso directo a rutas nacionales.',
     },
     {
-      image: 'https://loremflickr.com/800/600/office,interior?lock=1304',
-      title: 'Centro de Negocios Este',
-      location: 'Marcos Paz, Buenos Aires',
-      category: 'Centro de negocios',
-      description: 'Edificio de oficinas corporativas integrado al parque industrial, con espacios flexibles.',
+      image: 'assets/proyectos/obra-escolar-montaje-paneles.jpg',
+      title: 'Ampliación de Edificio Escolar',
+      location: 'Provincia de Buenos Aires',
+      category: 'Obra institucional · real',
+      description: 'Ampliación de un establecimiento educativo con sistema constructivo Inbuild, en ejecución.',
     },
     {
       image: 'https://loremflickr.com/800/600/suburb,house?lock=1305',

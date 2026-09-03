@@ -1,0 +1,61 @@
+.section-head {
+  max-width: 640px;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: clamp(26px, 3.2vw, 36px);
+    margin-top: 14px;
+  }
+
+  p {
+    margin-top: 14px;
+    color: var(--mezzo-ink-soft);
+    font-size: 16px;
+    max-width: 56ch;
+  }
+}
+
+.alliances {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.alliance-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 28px 24px;
+  border: 1px solid var(--mezzo-line);
+  background: var(--mezzo-paper);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 32px -18px rgba(26, 27, 24, 0.3), 0 0 0 1px rgba(217, 138, 37, 0.35);
+  }
+}
+
+.logo {
+  height: 34px;
+  width: auto;
+  margin-bottom: 4px;
+}
+
+.wordmark {
+  font-family: var(--mezzo-font-display);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--mezzo-graphite);
+}
+
+.tag {
+  font-family: var(--mezzo-font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--mezzo-steel);
+}
