@@ -30,3 +30,14 @@ export interface ProjectItem {
   readonly category: string;
   readonly description: string;
 }
+
+export interface CapabilitySlide {
+  readonly num: string;
+  readonly title: string;
+  readonly description: string;
+}
+
+export interface AllianceItem {
+  readonly name: string;
+  readonly description: string;
+}

@@ -1,0 +1,61 @@
+<section id="capacidades">
+  <div class="wrap">
+    <div class="section-head">
+      <mezzo-eyebrow text="Nuestras capacidades" />
+      <h2>Once fases, una sola gestión de punta a punta.</h2>
+      <p>
+        Así estructuramos la habilitación de un parque industrial en cualquier municipio de la
+        Provincia de Buenos Aires: desde el análisis de la oportunidad hasta la comercialización.
+      </p>
+    </div>
+  </div>
+
+  <div class="slider">
+    <div class="wrap slider-controls">
+      <div class="dots" role="tablist" aria-label="Fases del proyecto">
+        @for (slide of slides; track slide.num; let i = $index) {
+          <button
+            type="button"
+            role="tab"
+            class="dot"
+            [class.active]="activeIndex() === i"
+            [attr.aria-selected]="activeIndex() === i"
+            [attr.aria-label]="'Ir a la fase ' + slide.num + ': ' + slide.title"
+            (click)="scrollToIndex(i)"
+          ></button>
+        }
+      </div>
+      <div class="arrows">
+        <button
+          type="button"
+          class="arrow"
+          aria-label="Fase anterior"
+          [disabled]="activeIndex() === 0"
+          (click)="scrollPrev()"
+        >
+          ←
+        </button>
+        <button
+          type="button"
+          class="arrow"
+          aria-label="Fase siguiente"
+          [disabled]="activeIndex() === slides.length - 1"
+          (click)="scrollNext()"
+        >
+          →
+        </button>
+      </div>
+    </div>
+
+    <div class="track" #track (scroll)="onTrackScroll()" tabindex="0" aria-label="Carrusel de fases del proyecto">
+      @for (slide of slides; track slide.num) {
+        <article class="slide">
+          <span class="num">{{ slide.num }}</span>
+          <h3>{{ slide.title }}</h3>
+          <p>{{ slide.description }}</p>
+        </article>
+      }
+      <div class="track-spacer" aria-hidden="true"></div>
+    </div>
+  </div>
+</section>

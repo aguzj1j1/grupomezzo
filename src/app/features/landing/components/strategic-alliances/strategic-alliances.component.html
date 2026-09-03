@@ -1,0 +1,21 @@
+<section id="alianzas">
+  <div class="wrap">
+    <div class="section-head">
+      <mezzo-eyebrow text="Alianzas estratégicas" />
+      <h2>Alianzas estratégicas que impulsan resultados.</h2>
+      <p>
+        Construimos relaciones estratégicas con bancos, inversionistas y socios de referencia
+        que impulsan el éxito en cada proyecto.
+      </p>
+    </div>
+
+    <ul class="alliances">
+      @for (alliance of alliances; track alliance.name) {
+        <li class="alliance-card">
+          <span class="wordmark">{{ alliance.name }}</span>
+          <span class="tag">{{ alliance.description }}</span>
+        </li>
+      }
+    </ul>
+  </div>
+</section>

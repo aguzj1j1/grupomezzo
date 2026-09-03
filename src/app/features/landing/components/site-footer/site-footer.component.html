@@ -8,9 +8,7 @@
     </p>
     <div class="ctas">
       <a class="cta" [href]="'mailto:' + contactEmail">Escribinos por email</a>
-      <a class="cta cta--ghost" [href]="instagramUrl" target="_blank" rel="noopener">
-        Seguinos en Instagram ↗
-      </a>
+      <a class="cta cta--ghost" [href]="contactPhoneHref">Llamanos: {{ contactPhone }}</a>
     </div>
   </div>
 
@@ -21,7 +19,8 @@
     </a>
     <p class="meta">
       Desarrollos industriales y logísticos ·
-      <a [href]="instagramUrl" target="_blank" rel="noopener">&#64;grupo.mezzo</a>
+      <a [href]="instagramUrl" target="_blank" rel="noopener">&#64;grupo.mezzo</a> ·
+      <a [href]="linkedinUrl" target="_blank" rel="noopener">LinkedIn</a>
     </p>
   </div>
 </footer>

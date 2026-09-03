@@ -11,10 +11,14 @@ import { SectionEyebrowComponent } from '../../../../shared/components/section-e
   styleUrl: './site-footer.component.scss',
 })
 export class SiteFooterComponent {
-  /**
-   * Placeholder — reemplazar por el email real de contacto del cliente
-   * antes de publicar.
-   */
-  protected readonly contactEmail = 'contacto@grupomezzo.com.ar';
+  // Datos de contacto reales, tomados de la presentación institucional del cliente
+  // (Grupo Mezzo.pdf).
+  protected readonly contactEmail = 'contacto.grupomezzo@gmail.com';
+  protected readonly contactPhone = '+54 9 11 3209-2020';
   protected readonly instagramUrl = 'https://www.instagram.com/grupo.mezzo/';
+  protected readonly linkedinUrl = 'https://www.linkedin.com/in/grupo-mezzo';
+
+  protected get contactPhoneHref(): string {
+    return `tel:${this.contactPhone.replace(/[^+\d]/g, '')}`;
+  }
 }
