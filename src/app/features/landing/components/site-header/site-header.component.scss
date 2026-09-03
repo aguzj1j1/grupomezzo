@@ -43,32 +43,39 @@ header {
 .nav-desktop {
   display: flex;
   align-items: center;
-  gap: 34px;
+  gap: 22px;
+  flex-shrink: 0;
 
   ul {
     list-style: none;
     display: flex;
-    gap: 28px;
+    gap: 18px;
     margin: 0;
     padding: 0;
   }
 
   a {
     text-decoration: none;
-    font-size: 14.5px;
+    font-size: 14px;
     font-weight: 500;
     color: var(--mezzo-ink-soft);
     padding-bottom: 3px;
     border-bottom: 1px solid transparent;
     transition: border-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
 
     &:hover {
       color: var(--mezzo-graphite);
       border-color: var(--mezzo-amber);
     }
+
+    &.active {
+      color: var(--mezzo-graphite);
+      border-color: var(--mezzo-graphite);
+    }
   }
 
-  @media (max-width: 860px) {
+  @media (max-width: 1024px) {
     display: none;
   }
 }
@@ -86,9 +93,24 @@ header {
     height: 2px;
     background: var(--mezzo-graphite);
     margin: 5px 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
   }
 
-  @media (max-width: 860px) {
+  &.is-open {
+    span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    span:nth-child(2) {
+      opacity: 0;
+    }
+
+    span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+
+  @media (max-width: 1024px) {
     display: block;
   }
 }
@@ -110,5 +132,10 @@ header {
     border-bottom: 1px solid var(--mezzo-line);
     text-decoration: none;
     color: var(--mezzo-graphite);
+
+    &.active {
+      color: var(--mezzo-amber-ink);
+      background: var(--mezzo-paper);
+    }
   }
 }

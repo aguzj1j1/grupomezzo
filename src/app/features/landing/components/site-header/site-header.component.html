@@ -1,3 +1,18 @@
+<ng-template #navItems let-onClick="onClick">
+  @for (link of navLinks; track link.href) {
+    <li>
+      <a
+        [href]="link.href"
+        [class.active]="activeHref() === link.href"
+        [attr.aria-current]="activeHref() === link.href ? 'true' : null"
+        (click)="onClick && closeMenu()"
+      >
+        {{ link.label }}
+      </a>
+    </li>
+  }
+</ng-template>
+
 <header>
   <div class="wrap bar">
     <a href="#top" class="mark" aria-label="Grupo Mezzo, inicio">
@@ -5,11 +20,9 @@
       <span class="brand-text">Grupo Me<strong>zzo</strong></span>
     </a>
 
-    <nav class="nav-desktop">
+    <nav class="nav-desktop" aria-label="Navegación principal">
       <ul>
-        @for (link of navLinks; track link.href) {
-          <li><a [href]="link.href">{{ link.label }}</a></li>
-        }
+        <ng-container *ngTemplateOutlet="navItems" />
       </ul>
       <a class="cta" href="#contacto">Hablar con nosotros</a>
     </nav>
@@ -17,9 +30,10 @@
     <button
       class="menu-btn"
       type="button"
+      [class.is-open]="isMenuOpen()"
       [attr.aria-expanded]="isMenuOpen()"
       aria-controls="mobileNav"
-      aria-label="Abrir menú"
+      [attr.aria-label]="isMenuOpen() ? 'Cerrar menú' : 'Abrir menú'"
       (click)="toggleMenu()"
     >
       <span></span><span></span><span></span>
@@ -27,11 +41,9 @@
   </div>
 
   @if (isMenuOpen()) {
-    <nav id="mobileNav" class="nav-mobile">
+    <nav id="mobileNav" class="nav-mobile" aria-label="Navegación móvil">
       <ul>
-        @for (link of navLinks; track link.href) {
-          <li><a [href]="link.href" (click)="closeMenu()">{{ link.label }}</a></li>
-        }
+        <ng-container *ngTemplateOutlet="navItems; context: { onClick: true }" />
         <li><a href="#contacto" (click)="closeMenu()">Hablar con nosotros →</a></li>
       </ul>
     </nav>
