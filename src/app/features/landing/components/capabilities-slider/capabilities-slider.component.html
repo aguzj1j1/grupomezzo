@@ -47,15 +47,16 @@
       </div>
     </div>
 
-    <div class="track" #track (scroll)="onTrackScroll()" tabindex="0" aria-label="Carrusel de fases del proyecto">
-      @for (slide of slides; track slide.num) {
-        <article class="slide">
-          <span class="num">{{ slide.num }}</span>
-          <h3>{{ slide.title }}</h3>
-          <p>{{ slide.description }}</p>
-        </article>
-      }
-      <div class="track-spacer" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="track" #track (scroll)="onTrackScroll()" tabindex="0" aria-label="Carrusel de fases del proyecto">
+        @for (slide of slides; track slide.num) {
+          <article class="slide">
+            <span class="num">{{ slide.num }}</span>
+            <h3>{{ slide.title }}</h3>
+            <p>{{ slide.description }}</p>
+          </article>
+        }
+      </div>
     </div>
   </div>
 </section>

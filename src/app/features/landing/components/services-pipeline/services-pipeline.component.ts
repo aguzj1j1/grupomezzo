@@ -54,8 +54,8 @@ export class ServicesPipelineComponent {
     {
       num: '03',
       title: 'Hábitat y Soluciones de Vivienda',
-      image: 'https://loremflickr.com/640/420/house,residential?lock=103',
-      imageAlt: 'Desarrollo residencial con espacios verdes y amenities',
+      image: 'assets/services/vivienda-inbuild-terminada.jpg',
+      imageAlt: 'Vivienda real terminada con sistema constructivo Inbuild, con pérgola de acceso',
       description:
         'Resolvemos el hábitat en todas sus escalas: desde vivienda de interés social hasta barrios cerrados con amenities, con sistemas constructivos que garantizan calidad y plazo.',
       items: [
@@ -77,8 +77,8 @@ export class ServicesPipelineComponent {
     {
       num: '04',
       title: 'Articulación Institucional (Público-Privada)',
-      image: 'https://loremflickr.com/640/420/meeting,business?lock=104',
-      imageAlt: 'Mesa de gestión entre representantes del sector público y privado',
+      image: 'assets/proyectos/obra-escolar-articulacion-institucional.jpg',
+      imageAlt: 'Vista aérea de una ampliación escolar real en obra, junto al edificio existente de la institución',
       description:
         'Somos el nexo entre el sector privado y el sector público: gestionamos la intermediación, la normativa y el financiamiento que un desarrollo de escala necesita para avanzar.',
       items: [

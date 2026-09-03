@@ -12,6 +12,9 @@
     <ul class="alliances">
       @for (alliance of alliances; track alliance.name) {
         <li class="alliance-card">
+          @if (alliance.logo) {
+            <img class="logo" [src]="alliance.logo" [alt]="alliance.logoAlt || alliance.name" loading="lazy" />
+          }
           <span class="wordmark">{{ alliance.name }}</span>
           <span class="tag">{{ alliance.description }}</span>
         </li>

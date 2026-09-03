@@ -22,6 +22,23 @@
 }
 
 // ---------------------------------------------------------------------------
+// Video de presentación — mismo tratamiento de "figure" que .banner (borde +
+// leyenda mono debajo), pero sin el aspect-ratio/object-fit de foto: el
+// <video> conserva su propia relación de aspecto para no recortar los
+// controles nativos del reproductor.
+// ---------------------------------------------------------------------------
+.video-feature {
+  margin: 40px 0 0;
+
+  video {
+    display: block;
+    width: 100%;
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Franjas de dato — mismo lenguaje visual del footer (fondo graphite / texto
 // paper), reservado para los números fuertes del sistema.
 // ---------------------------------------------------------------------------

@@ -40,4 +40,6 @@ export interface CapabilitySlide {
 export interface AllianceItem {
   readonly name: string;
   readonly description: string;
+  readonly logo?: string;
+  readonly logoAlt?: string;
 }

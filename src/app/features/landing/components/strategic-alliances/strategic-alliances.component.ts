@@ -12,12 +12,19 @@ import { AllianceItem } from '../../landing.models';
 })
 export class StrategicAlliancesComponent {
   /**
-   * Wordmarks tipográficos — el cliente no entregó los isotipos reales de sus
-   * aliados. Reemplazar `name` por una imagen del logo real (`assets/alliances/`)
-   * en cuanto el cliente los provea.
+   * Mercado Casa: isotipo real, tomado del favicon público de mercadocasa.com.ar
+   * (SVG "M-casa", Verde Vivo #2A8B4E — pensado por su propio estudio de marca
+   * para uso como watermark/aplicación con el wordmark visible al lado).
+   * Efi Group: sin logo provisto todavía — wordmark tipográfico como placeholder,
+   * reemplazar por `logo` en `assets/alliances/` en cuanto el cliente lo pase.
    */
   protected readonly alliances: readonly AllianceItem[] = [
     { name: 'Efi Group', description: 'Aliado estratégico' },
-    { name: 'Mercado Casa', description: 'Aliado estratégico' },
+    {
+      name: 'Mercado Casa',
+      description: 'Aliado estratégico',
+      logo: 'assets/alliances/mercado-casa-isotipo.svg',
+      logoAlt: 'Isotipo de Mercado Casa',
+    },
   ];
 }

@@ -55,7 +55,7 @@ export class CapabilitiesSliderComponent {
       num: '07',
       title: 'Tramitación de licencias',
       description:
-        'Gestionamos el trámite de habilitación de punta a punta ante el municipio y la DPOUT, en cualquier municipio de la Provincia de Buenos Aires: proyecto de Ordenanza de creación de zona industrial, estudios territoriales y ambientales, y certificados de factibilidad de los servicios esenciales —agua, energía eléctrica, pavimento y desagües pluviales.',
+        'Gestionamos la habilitación ante el municipio y la DPOUT —ordenanza de zona industrial, estudios ambientales y factibilidades de servicios— en cualquier municipio de la Provincia.',
     },
     {
       num: '08',
