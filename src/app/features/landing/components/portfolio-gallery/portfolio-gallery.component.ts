@@ -4,6 +4,11 @@ import { SectionEyebrowComponent } from '../../../../shared/components/section-e
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { ProjectItem } from '../../landing.models';
 
+// Placeholder local para los proyectos ilustrativos — antes se usaba
+// loremflickr.com, que dejó de responder (401) y rompía las fotos en
+// producción. Un SVG propio no depende de ningún servicio externo.
+const ILLUSTRATIVE_PLACEHOLDER = 'assets/proyectos/placeholder-ilustrativo.svg';
+
 @Component({
   selector: 'mezzo-portfolio-gallery',
   standalone: true,
@@ -15,21 +20,21 @@ import { ProjectItem } from '../../landing.models';
 export class PortfolioGalleryComponent {
   protected readonly projects: readonly ProjectItem[] = [
     {
-      image: 'https://loremflickr.com/800/600/warehouse,industrial?lock=301',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       title: 'Nave Industrial Norte',
       location: 'Marcos Paz, Buenos Aires',
       category: 'Nave industrial',
       description: 'Nave de 4.200 m² con andenes de carga y patios de maniobra para logística pesada.',
     },
     {
-      image: 'https://loremflickr.com/800/600/logistics,industrial?lock=302',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       title: 'Parque Logístico Ruta 40',
       location: 'Marcos Paz, Buenos Aires',
       category: 'Parque logístico',
       description: 'Predio de 12 hectáreas subdividido en lotes con infraestructura vial y de servicios completa.',
     },
     {
-      image: 'https://loremflickr.com/800/600/warehouse,logistics?lock=303',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       title: 'Centro de Distribución Sur',
       location: 'Provincia de Buenos Aires',
       category: 'Centro de distribución',
@@ -43,14 +48,14 @@ export class PortfolioGalleryComponent {
       description: 'Ampliación de un establecimiento educativo con sistema constructivo Inbuild, en ejecución.',
     },
     {
-      image: 'https://loremflickr.com/800/600/suburb,house?lock=1305',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       title: 'Barrio Cerrado Las Acacias',
       location: 'Provincia de Buenos Aires',
       category: 'Desarrollo residencial',
       description: 'Urbanización cerrada con sistemas constructivos industrializados y espacios verdes comunes.',
     },
     {
-      image: 'https://loremflickr.com/800/600/factory,energy?lock=306',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       title: 'Planta Bioenergía La Corona',
       location: 'Marcos Paz, Buenos Aires',
       category: 'Planta industrial',

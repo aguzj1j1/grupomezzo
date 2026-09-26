@@ -3,6 +3,11 @@ import { SectionEyebrowComponent } from '../../../../shared/components/section-e
 import { ScrollRevealDirective } from '../../../../shared/directives/scroll-reveal.directive';
 import { PipelineStep } from '../../landing.models';
 
+// Placeholder local para las líneas de acción ilustrativas — antes se usaba
+// loremflickr.com, que dejó de responder (401) y rompía las fotos en
+// producción. Un SVG propio no depende de ningún servicio externo.
+const ILLUSTRATIVE_PLACEHOLDER = 'assets/proyectos/placeholder-ilustrativo.svg';
+
 @Component({
   selector: 'mezzo-services-pipeline',
   standalone: true,
@@ -16,7 +21,7 @@ export class ServicesPipelineComponent {
     {
       num: '01',
       title: 'Desarrollo Industrial y Logístico',
-      image: 'https://loremflickr.com/640/420/industry,warehouse?lock=101',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       imageAlt: 'Parque industrial en desarrollo, con accesos y naves en construcción',
       description:
         'Proyectamos parques industriales y logísticos de punta a punta: gestión integral desde la reconversión de suelo rural hasta polos de alto rendimiento operativo.',
@@ -36,7 +41,7 @@ export class ServicesPipelineComponent {
     {
       num: '02',
       title: 'Infraestructura y Obra Civil',
-      image: 'https://loremflickr.com/640/420/road,construction?lock=102',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       imageAlt: 'Obra vial y trazado de infraestructura de un desarrollo',
       description:
         'Ejecutamos la infraestructura que sostiene cada desarrollo: trazado, urbanización y las obras complementarias que conectan el proyecto con su entorno.',
@@ -100,7 +105,7 @@ export class ServicesPipelineComponent {
     {
       num: '05',
       title: 'Respaldo Constructivo',
-      image: 'https://loremflickr.com/640/420/construction,steel?lock=105',
+      image: ILLUSTRATIVE_PLACEHOLDER,
       imageAlt: 'Sistema constructivo industrializado montado en obra',
       description:
         'Cada proyecto se apoya en un portafolio sólido de obras ejecutadas y en sistemas constructivos de vanguardia, con la certeza de plazo y calidad de la industria.',
