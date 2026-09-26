@@ -97,6 +97,11 @@
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
+    // La foto original es más ancha que el recorte 4:3 — sin este ajuste el
+    // centrado por defecto queda justo en el límite entre las dos casas y
+    // se pierde la mitad de la vivienda Inbuild (la de la izquierda, el
+    // sujeto real de la foto) a favor de la casa vecina.
+    object-position: 20% 50%;
     border: 1px solid rgba(255, 255, 255, 0.14);
   }
 
