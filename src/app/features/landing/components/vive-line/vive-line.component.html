@@ -1,0 +1,135 @@
+<section id="linea-vive">
+  <div class="wrap">
+    <div class="section-head">
+      <mezzo-eyebrow text="Línea Vive · Vivienda social" />
+      <h2>Tu primera casa propia, en 6 pasos.</h2>
+      <p>
+        La Línea Vive lleva Inbuild System a la vivienda social: 6 modelos, de 28 a 61 m²,
+        pensados para que empieces por lo esencial y vayas sumando ambientes a medida que tu
+        familia crece —sin resignar la certeza de un precio cerrado y una entrega en tiempo
+        récord.
+      </p>
+    </div>
+
+    <div class="growth-band">
+      <p class="growth-title">Tu casa crece con vos.</p>
+      <p class="growth-copy">
+        Empezás chico con la cuota más accesible y vas sumando ambientes cuando tu familia crece.
+        Lo que ya construiste siempre es tuyo: la casa te sigue.
+      </p>
+      <ol class="ladder">
+        @for (step of ladder; track step) {
+          <li>
+            <span class="node">{{ step }}</span>
+            <span class="unit">m²</span>
+          </li>
+        }
+      </ol>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="models">
+      @for (model of models; track model.title; let i = $index) {
+        <article class="model-card" mezzoReveal [revealDelay]="(i % 3) * 90">
+          <div class="media">
+            <img [src]="model.exteriorImage" [alt]="'Fachada real de la vivienda ' + model.title" loading="lazy" />
+            <span class="size-badge">{{ model.size }} m²</span>
+          </div>
+
+          <div class="body">
+            <h3>{{ model.title }}</h3>
+            <p class="tagline">{{ model.tagline }}</p>
+            <p class="desc">{{ model.description }}</p>
+
+            <ul class="spec-list">
+              <li>{{ model.rooms }}</li>
+              <li>{{ model.bathrooms }}</li>
+            </ul>
+
+            <div class="plan-gallery">
+              <figure>
+                <img [src]="model.planImage" [alt]="'Plano del modelo ' + model.title" loading="lazy" />
+                <figcaption>Plano</figcaption>
+              </figure>
+              <figure>
+                <img [src]="model.render3dImage" [alt]="'Vista 3D del interior de ' + model.title" loading="lazy" />
+                <figcaption>Vista 3D</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <p class="disclaimer">
+      Superficies cubiertas y distribución de referencia por modelo — fuente: fichas comerciales
+      Línea Vive del cliente. Fotos de fachada, obras reales entregadas.
+    </p>
+
+    <!-- Conocé tu casa: mismas 2 fotos de interior en las 6 fichas -->
+    <div class="block">
+      <h3 class="block-title">Conocé tu casa por dentro.</h3>
+      <p class="block-lede">
+        Cocina, comedor y living integrados en un solo ambiente que se siente amplio, y un baño
+        completo con griferías y sanitarios incluidos —el mismo estándar de terminación en los 6
+        modelos.
+      </p>
+      <div class="gallery-2">
+        <figure>
+          <img [src]="interiorPhotos.kitchen" alt="Cocina y living comedor integrados, terminación estándar Línea Vive" loading="lazy" />
+        </figure>
+        <figure>
+          <img [src]="interiorPhotos.bathroom" alt="Baño completo, terminación estándar Línea Vive" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+
+    <!-- Datos comunes a los 6 modelos -->
+    <div class="feature-grid">
+      @for (f of commonFeatures; track f.title) {
+        <div class="feature-card">
+          <span class="glyph" aria-hidden="true"></span>
+          <h4>{{ f.title }}</h4>
+          <p>{{ f.description }}</p>
+        </div>
+      }
+    </div>
+
+    <!-- Cómo la hacés tuya -->
+    <div class="block">
+      <h3 class="block-title">Cómo la hacés tuya</h3>
+      <p class="block-lede">Elegís el alcance. Te acompañamos en cada paso.</p>
+
+      <div class="pricing-grid">
+        @for (tier of pricingTiers; track tier.title) {
+          <div class="pricing-card">
+            <h4>{{ tier.title }}</h4>
+            <p>{{ tier.description }}</p>
+            <p class="price">Desde <strong>{{ tier.priceFrom }} USD</strong> el m²</p>
+          </div>
+        }
+      </div>
+
+      <div class="financing">
+        <div class="financing-head">
+          <p class="financing-title">Financiación en pesos</p>
+          <p class="financing-bank">A través de Banco Hipotecario</p>
+        </div>
+        <div class="financing-facts">
+          @for (fact of financingFacts; track fact.label) {
+            <div class="fact">
+              <span class="value">{{ fact.value }}</span>
+              <span class="label">{{ fact.label }}</span>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-row">
+      <p>Pedí tu cuota estimada. Te la armamos para tu situación en menos de 48 hs.</p>
+      <a class="cta" href="#contacto">Pedir mi cuota estimada</a>
+    </div>
+  </div>
+</section>

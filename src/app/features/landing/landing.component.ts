@@ -6,6 +6,7 @@ import { AboutSectionComponent } from './components/about-section/about-section.
 import { ServicesPipelineComponent } from './components/services-pipeline/services-pipeline.component';
 import { CapabilitiesSliderComponent } from './components/capabilities-slider/capabilities-slider.component';
 import { InbuildSystemComponent } from './components/inbuild-system/inbuild-system.component';
+import { ViveLineComponent } from './components/vive-line/vive-line.component';
 import { SustainabilityPanelComponent } from './components/sustainability-panel/sustainability-panel.component';
 import { PortfolioGalleryComponent } from './components/portfolio-gallery/portfolio-gallery.component';
 import { BenefitsGridComponent } from './components/benefits-grid/benefits-grid.component';
@@ -24,6 +25,7 @@ import { SiteFooterComponent } from './components/site-footer/site-footer.compon
     ServicesPipelineComponent,
     CapabilitiesSliderComponent,
     InbuildSystemComponent,
+    ViveLineComponent,
     SustainabilityPanelComponent,
     PortfolioGalleryComponent,
     BenefitsGridComponent,

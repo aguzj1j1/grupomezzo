@@ -1,0 +1,432 @@
+:host {
+  display: block;
+  background: var(--mezzo-concrete);
+}
+
+.section-head {
+  max-width: 640px;
+  margin-bottom: 40px;
+
+  h2 {
+    font-size: clamp(26px, 3.2vw, 36px);
+    margin-top: 14px;
+  }
+
+  p {
+    margin-top: 14px;
+    color: var(--mezzo-ink-soft);
+    font-size: 16px;
+    max-width: 62ch;
+  }
+}
+
+// ---------------------------------------------------------------------------
+// "Tu casa crece con vos" — misma franja oscura + escalera de tamaños de las
+// 6 fichas comerciales, como puente visual entre los 6 modelos.
+// ---------------------------------------------------------------------------
+.growth-band {
+  background: var(--mezzo-graphite);
+  color: var(--mezzo-paper);
+  padding: 32px 28px;
+}
+
+.growth-title {
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.growth-copy {
+  margin-top: 8px;
+  font-size: 14.5px;
+  color: #c7c4b8;
+  max-width: 62ch;
+}
+
+.ladder {
+  margin: 24px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0;
+
+  li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    &:not(:last-child)::after {
+      content: '';
+      width: 26px;
+      height: 1px;
+      background: #4a4b42;
+      margin: 0 10px;
+
+      @media (max-width: 560px) {
+        width: 14px;
+        margin: 0 6px;
+      }
+    }
+  }
+
+  .node {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background: #2a2b25;
+    border: 1px solid #4a4b42;
+    font-family: var(--mezzo-font-display);
+    font-weight: 700;
+    font-size: 15px;
+  }
+
+  .unit {
+    font-family: var(--mezzo-font-mono);
+    font-size: 10.5px;
+    color: #9a9b8f;
+    display: none;
+
+    @media (min-width: 640px) {
+      display: inline;
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Grilla de modelos
+// ---------------------------------------------------------------------------
+.models {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+
+  @media (min-width: 720px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 1080px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.model-card {
+  background: var(--mezzo-paper);
+  border: 1px solid var(--mezzo-line);
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px -12px rgba(26, 27, 24, 0.25);
+  }
+}
+
+.media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.size-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-family: var(--mezzo-font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 6px 11px;
+  color: var(--mezzo-graphite);
+  background: var(--mezzo-paper);
+}
+
+.body {
+  padding: 20px 20px 22px;
+
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    font-family: var(--mezzo-font-display);
+  }
+
+  .tagline {
+    margin-top: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--mezzo-amber-ink);
+  }
+
+  .desc {
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+.spec-list {
+  margin: 14px 0 0;
+  padding: 12px 0 0;
+  border-top: 1px solid var(--mezzo-line);
+  list-style: none;
+  display: grid;
+  gap: 6px;
+
+  li {
+    font-size: 13.5px;
+    color: var(--mezzo-graphite);
+    padding-left: 16px;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 7px;
+      width: 8px;
+      height: 8px;
+      background: linear-gradient(115deg, #4684c2, #e8ac67);
+    }
+  }
+}
+
+.plan-gallery {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: #fff;
+    border: 1px solid var(--mezzo-line);
+  }
+
+  figcaption {
+    margin-top: 6px;
+    font-family: var(--mezzo-font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mezzo-steel);
+    text-align: center;
+  }
+}
+
+.disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  color: var(--mezzo-steel);
+  font-style: italic;
+}
+
+// ---------------------------------------------------------------------------
+// Bloques compartidos (mismo lenguaje que Inbuild System)
+// ---------------------------------------------------------------------------
+.block {
+  padding: 56px 0 0;
+  margin-top: 56px;
+  border-top: 1px solid var(--mezzo-line);
+}
+
+.block-title {
+  font-size: clamp(20px, 2.4vw, 26px);
+  max-width: 34ch;
+}
+
+.block-lede {
+  margin-top: 12px;
+  color: var(--mezzo-ink-soft);
+  font-size: 15.5px;
+  max-width: 58ch;
+}
+
+.gallery-2 {
+  margin-top: 24px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  figure {
+    margin: 0;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 6 / 5;
+    object-fit: cover;
+    border: 1px solid var(--mezzo-line);
+  }
+}
+
+.feature-grid {
+  margin-top: 44px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.feature-card {
+  background: var(--mezzo-paper);
+  border: 1px solid var(--mezzo-line);
+  padding: 22px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--mezzo-font-body);
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
+.glyph {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 14px;
+  background: linear-gradient(115deg, transparent 0 40%, var(--mezzo-amber) 40% 60%, transparent 60% 100%);
+}
+
+// Modalidades de contratación
+.pricing-grid {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pricing-card {
+  background: var(--mezzo-paper);
+  border: 1px solid var(--mezzo-graphite);
+  padding: 22px;
+
+  h4 {
+    font-size: 16px;
+    font-weight: 600;
+    font-family: var(--mezzo-font-body);
+  }
+
+  p {
+    margin-top: 8px;
+    font-size: 14px;
+    color: var(--mezzo-ink-soft);
+  }
+
+  .price {
+    margin-top: 14px;
+    font-size: 13px;
+    color: var(--mezzo-graphite);
+
+    strong {
+      font-family: var(--mezzo-font-mono);
+      color: var(--mezzo-amber-ink);
+    }
+  }
+}
+
+// Financiación
+.financing {
+  margin-top: 20px;
+  background: rgba(43, 68, 54, 0.08);
+  border: 1px solid var(--mezzo-line);
+  padding: 24px 26px;
+  display: grid;
+  gap: 20px;
+
+  @media (min-width: 760px) {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 32px;
+  }
+}
+
+.financing-title {
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.financing-bank {
+  margin-top: 4px;
+  font-family: var(--mezzo-font-mono);
+  font-size: 12px;
+  color: var(--mezzo-steel);
+}
+
+.financing-facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+
+  @media (max-width: 560px) {
+    grid-template-columns: 1fr;
+  }
+
+  .fact {
+    .value {
+      display: block;
+      font-family: var(--mezzo-font-display);
+      font-weight: 700;
+      font-size: 22px;
+      color: var(--mezzo-amber-ink);
+    }
+
+    .label {
+      display: block;
+      margin-top: 4px;
+      font-size: 13px;
+      color: var(--mezzo-ink-soft);
+    }
+  }
+}
+
+// CTA de cierre
+.cta-row {
+  margin-top: 48px;
+  padding: 36px 0 0;
+  border-top: 1px solid var(--mezzo-line);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+
+  p {
+    font-size: 16px;
+    font-weight: 600;
+    max-width: 44ch;
+  }
+}
