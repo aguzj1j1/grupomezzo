@@ -7,7 +7,6 @@ import {
   signal,
 } from '@angular/core';
 import { NgTemplateOutlet } from '@angular/common';
-import { LogoMarkComponent } from '../../../../shared/components/logo-mark/logo-mark.component';
 
 interface NavLink {
   readonly label: string;
@@ -17,7 +16,7 @@ interface NavLink {
 @Component({
   selector: 'mezzo-site-header',
   standalone: true,
-  imports: [LogoMarkComponent, NgTemplateOutlet],
+  imports: [NgTemplateOutlet],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './site-header.component.html',
   styleUrl: './site-header.component.scss',
@@ -31,6 +30,7 @@ export class SiteHeaderComponent implements OnInit, OnDestroy {
     { label: 'Servicios', href: '#servicios' },
     { label: 'Capacidades', href: '#capacidades' },
     { label: 'Inbuild', href: '#sistema-inbuild' },
+    { label: 'Línea Vive', href: '#linea-vive' },
     { label: 'Sostenibilidad', href: '#sostenibilidad' },
     { label: 'Proyectos', href: '#proyectos' },
     { label: 'Articulación', href: '#articulacion' },

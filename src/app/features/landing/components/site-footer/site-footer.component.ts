@@ -1,11 +1,10 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { LogoMarkComponent } from '../../../../shared/components/logo-mark/logo-mark.component';
 import { SectionEyebrowComponent } from '../../../../shared/components/section-eyebrow/section-eyebrow.component';
 
 @Component({
   selector: 'mezzo-site-footer',
   standalone: true,
-  imports: [LogoMarkComponent, SectionEyebrowComponent],
+  imports: [SectionEyebrowComponent],
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './site-footer.component.html',
   styleUrl: './site-footer.component.scss',
