@@ -33,13 +33,14 @@ interface FinancingFact {
 }
 
 /**
- * Línea Vive — vivienda social de InBuild System, en 6 tamaños progresivos
- * (28 a 61 m²). Contenido extraído tal cual de las 6 fichas comerciales
- * entregadas por el cliente ("Grupo Mezzo Vive 28/38/48/51/57/61.pdf"):
- * descripciones, ambientes, planos, renders 3D, las 3 modalidades de
- * contratación con sus precios por m² y la financiación en pesos vía
- * Banco Hipotecario. Es la misma lógica de "la casa crece con vos" que
- * ilustran las fichas: se empieza por el modelo más chico y se va
+ * Línea Vive — vivienda social de InBuild System, en 5 tamaños progresivos
+ * (28 a 61 m²; el modelo 51 se sacó de la línea a pedido del cliente).
+ * Contenido extraído tal cual de las fichas comerciales entregadas por el
+ * cliente ("Grupo Mezzo Vive 28/38/48/57/61.pdf"): descripciones,
+ * ambientes, planos, renders 3D, las 3 modalidades de contratación con sus
+ * precios por m² y la financiación en pesos vía Banco Hipotecario. Es la
+ * misma lógica de "la casa crece con vos" que ilustran las fichas: se
+ * empieza por el modelo más chico y se va
  * ampliando sin perder lo ya construido.
  */
 @Component({
@@ -51,7 +52,7 @@ interface FinancingFact {
   styleUrl: './vive-line.component.scss',
 })
 export class ViveLineComponent {
-  protected readonly ladder: readonly string[] = ['28', '38', '48', '51', '57', '61'];
+  protected readonly ladder: readonly string[] = ['28', '38', '48', '57', '61'];
 
   protected readonly models: readonly ViveModel[] = [
     {
@@ -94,18 +95,6 @@ export class ViveLineComponent {
       priceObraGris: '$ 51.744.000',
     },
     {
-      size: '51',
-      title: 'Vive 51',
-      tagline: 'Espacio real para toda la familia.',
-      description:
-        '51 m² con tres dormitorios: lugar para toda la familia, con la certeza de un precio cerrado al firmar y entrega en tiempo récord. Tu casa propia, con el sistema InBuild.',
-      rooms: '3 dormitorios + living comedor y cocina',
-      bathrooms: '1 baño completo',
-      exteriorImage: 'assets/vive/vive-51-exterior.jpg',
-      planImage: 'assets/vive/vive-51-plano.png',
-      render3dImage: 'assets/vive/vive-51-3d.jpg',
-    },
-    {
       size: '57',
       title: 'Vive 57',
       tagline: 'Para instalarte y quedarte.',
@@ -133,14 +122,14 @@ export class ViveLineComponent {
     },
   ];
 
-  // Estas dos fotos de interior son las mismas en las 6 fichas del cliente
+  // Estas dos fotos de interior son las mismas en todas las fichas del cliente
   // (cocina/living y baño tipo) — se muestran una sola vez para toda la línea.
   protected readonly interiorPhotos = {
     kitchen: 'assets/vive/vive-interior-cocina.jpg',
     bathroom: 'assets/vive/vive-interior-bano.jpg',
   };
 
-  // "Datos del modelo" — idénticos en las 6 fichas, comunes a toda la línea.
+  // "Datos del modelo" — idénticos en todas las fichas, comunes a toda la línea.
   protected readonly commonFeatures: readonly CommonFeature[] = [
     {
       title: 'Entrega en menos de 3 meses',
@@ -158,7 +147,7 @@ export class ViveLineComponent {
   ];
 
   // Página "Cómo la hacés tuya" — 3 modalidades de contratación, con precio
-  // desde por m², igual en las 6 fichas.
+  // desde por m², igual en todas las fichas.
   protected readonly pricingTiers: readonly PricingTier[] = [
     {
       title: 'Kit de autoconstrucción',
