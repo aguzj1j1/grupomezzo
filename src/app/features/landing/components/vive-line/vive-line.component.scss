@@ -199,6 +199,45 @@
   }
 }
 
+// Precio de lista real (Obra Gris habitable) — cargado por el cliente para
+// 28/38/48. Se destaca con el mismo acento ámbar que el resto del sitio, sin
+// llegar a competir con los precios por m² de "Cómo la hacés tuya".
+.price-block {
+  margin-top: 16px;
+  padding: 14px 16px;
+  background: rgba(217, 138, 37, 0.08);
+  border-left: 2px solid var(--mezzo-amber);
+  display: grid;
+  gap: 2px;
+
+  .price-label {
+    font-family: var(--mezzo-font-mono);
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--mezzo-steel);
+  }
+
+  .price-value {
+    font-family: var(--mezzo-font-display);
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--mezzo-amber-ink);
+
+    small {
+      font-family: var(--mezzo-font-mono);
+      font-weight: 500;
+      font-size: 12px;
+      color: var(--mezzo-steel);
+    }
+  }
+
+  .price-note {
+    font-size: 12px;
+    color: var(--mezzo-ink-soft);
+  }
+}
+
 .plan-gallery {
   margin-top: 16px;
   display: grid;

@@ -12,6 +12,8 @@ interface ViveModel {
   readonly exteriorImage: string;
   readonly planImage: string;
   readonly render3dImage: string;
+  /** Precio de lista Obra Gris habitable (+ IVA) — solo cargado para 28/38/48 por ahora. */
+  readonly priceObraGris?: string;
 }
 
 interface CommonFeature {
@@ -63,6 +65,7 @@ export class ViveLineComponent {
       exteriorImage: 'assets/vive/vive-28-exterior.jpg',
       planImage: 'assets/vive/vive-28-plano.png',
       render3dImage: 'assets/vive/vive-28-3d.jpg',
+      priceObraGris: '$ 30.184.000',
     },
     {
       size: '38',
@@ -75,6 +78,7 @@ export class ViveLineComponent {
       exteriorImage: 'assets/vive/vive-38-exterior.jpg',
       planImage: 'assets/vive/vive-38-plano.png',
       render3dImage: 'assets/vive/vive-38-3d.jpg',
+      priceObraGris: '$ 40.964.000',
     },
     {
       size: '48',
@@ -87,6 +91,7 @@ export class ViveLineComponent {
       exteriorImage: 'assets/vive/vive-48-exterior.jpg',
       planImage: 'assets/vive/vive-48-plano.png',
       render3dImage: 'assets/vive/vive-48-3d.jpg',
+      priceObraGris: '$ 51.744.000',
     },
     {
       size: '51',

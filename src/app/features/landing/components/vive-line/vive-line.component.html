@@ -47,6 +47,14 @@
               <li>{{ model.bathrooms }}</li>
             </ul>
 
+            @if (model.priceObraGris) {
+              <div class="price-block">
+                <span class="price-label">Obra Gris habitable</span>
+                <span class="price-value">{{ model.priceObraGris }} <small>+ IVA</small></span>
+                <span class="price-note">Incluye sanitarios y mueble de cocina.</span>
+              </div>
+            }
+
             <div class="plan-gallery">
               <figure>
                 <img [src]="model.planImage" [alt]="'Plano del modelo ' + model.title" loading="lazy" />
