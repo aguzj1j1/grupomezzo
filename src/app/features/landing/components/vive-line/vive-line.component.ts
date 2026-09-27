@@ -116,6 +116,7 @@ export class ViveLineComponent {
       exteriorImage: 'assets/vive/vive-57-exterior.jpg',
       planImage: 'assets/vive/vive-57-plano.png',
       render3dImage: 'assets/vive/vive-57-3d.jpg',
+      priceObraGris: '$ 61.446.000',
     },
     {
       size: '61',
@@ -128,6 +129,7 @@ export class ViveLineComponent {
       exteriorImage: 'assets/vive/vive-61-exterior.jpg',
       planImage: 'assets/vive/vive-61-plano.png',
       render3dImage: 'assets/vive/vive-61-3d.jpg',
+      priceObraGris: '$ 65.758.000',
     },
   ];
 
